@@ -74,10 +74,10 @@ async function getAlbumById(req, res) {
 
   const album = await albumModel
     .findById(albumId)
-    .populate("artist", "email, username")
+    .populate("artist", "email username")
     .populate("musics");
 
-  res.atatus(200).json({
+  res.status(200).json({
     message: "Album Fetched",
     album: album,
   });

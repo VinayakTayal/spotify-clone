@@ -11,7 +11,7 @@ async function authArtist(req, res, next) {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    if (decoded !== "artist") {
+    if (decoded.role !== "artist") {
       return res.status(403).json({
         message: "You Dont have Access",
       });
@@ -32,7 +32,7 @@ async function authUser(req, res, next) {
   const token = req.cookies.token;
 
   if (!token) {
-    res.status(401).json({ message: "Unauthprized" });
+    return res.status(401).json({ message: "Unauthprized" });
   }
 
   try {
