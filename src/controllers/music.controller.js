@@ -1,5 +1,4 @@
 const musicModel = require("../models/music.model");
-const jwt = require("jsonwebtoken");
 const { uploadFile } = require("../services/storage.service");
 const albumModel = require("../models/album.model");
 

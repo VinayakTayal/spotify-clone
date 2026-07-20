@@ -74,7 +74,7 @@ async function loginUser(req, res) {
 
   if (!isPasswordValid) {
     return res.status(401).json({
-      message: "Inavlid Credentials",
+      message: "Invalid Credentials",
     });
   }
 
